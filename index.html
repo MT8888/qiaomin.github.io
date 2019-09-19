@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
@@ -50,119 +48,6 @@
         </div>
     </div>
 
-    <script>
-        var inds = 0
-    </script>
-    <script src="./data.js"></script>
-    <script src="./Show.js"></script>
-    <script>
-        new Show({
-            data: data,
-
-            box: "#box",
-            ul: "#ul",
-            xinxi: "#xinxi",
-            name: "#name",
-            box2: "#box2",
-            xix: "#xix",
-
-            ind: "ind",
-            active: "active"
-        })
-    </script>
-    <!-- <script src="./main.js"></script> -->
-    <script>
-        function Main(o) {
-            this.data = o.data
-            this.box2 = document.querySelector(o.box2)
-            this.boxleft = document.querySelector(o.boxleft)
-            this.xix = document.querySelector(o.xix)
-            this.boxzuo = document.querySelector(o.boxzuo)
-            this.count = document.querySelector(o.count)
-            this.mone = document.querySelector(o.mone)
-            this.danjia = document.querySelector(o.danjia)
-            this.sub = document.querySelector(o.sub)
-            this.active = o.active
-            this.init()
-        }
-        Main.prototype = {
-            constructor: Main,
-            init: function () { //公共方法
-                this.reader(8, 16)
-                this.addEvent()
-            },
-            reader: function (x, y) { //封装渲染方法
-                var html = "<h2>银幕中央</h2>"
-                for (var i = 1; i < x; i++) {
-                    html += "<p>"
-                    for (var j = 0; j < y; j++) {
-                        if (j !== 0) {
-                            html += `<span hang="${i}${j}"></span>`
-                        } else {
-                            html += `<span>${i}</span>`
-                        }
-                    }
-                }
-                this.boxleft.innerHTML = html
-
-            },
-            addEvent: function () {
-                var that = this
-                this.boxleft.onclick = function (e) {
-                    var tar = e.target
-                    if (tar.getAttribute("hang")) {
-                        that.spanEve(tar)
-                    }
-                }
-            },
-            spanEve: function (tar) { //左侧座位的点击事件
-
-
-                if (!tar.classList.contains("active")) {
-                    if (this.boxzuo.children.length < 5) {
-                        tar.classList.add("active")
-                        var span = document.createElement("span")
-                        span.setAttribute("ind", tar.getAttribute("hang"))
-                        span.innerHTML = `${tar.getAttribute("hang")[0]}排${tar.getAttribute("hang")[1]}座`
-                        this.boxzuo.appendChild(span)
-                        tar.innerHTML = "√"
-                        this.count.innerHTML++
-                        this.mone.innerHTML = this.mone.innerHTML * 1 + this.data[inds].mon * 1
-
-                    } else {
-                        alert("最多只能买五张")
-                    }
-
-                } else {
-                    tar.classList.remove("active")
-                    var that = this
-                    tar.innerHTML = "";
-                    [...this.boxzuo.children].forEach(function (e) {
-                        console.log(e)
-                        if (e.getAttribute("ind") === tar.getAttribute("hang")) {
-                            this.boxzuo.removeChild(e)
-                        }
-                    })
-                    this.count.innerHTML--
-                    this.mone.innerHTML = this.mone.innerHTML - this.data[inds].mon
-                }
-                this.boxzuo.children.length > 0 ? this.sub.classList.remove("col") : this.sub.classList
-                    .add("col")
-            }
-        }
-        new Main({
-            data: data,
-            box2: "#box2",
-            boxleft: "#boxleft",
-            xix: "#xix",
-            boxzuo: "#boxzuo",
-            active: "active",
-            count: "#count",
-            mone: "#mone",
-            danjia: "#danjia",
-            sub: "#sub",
-        })
-    </script>
 </body>
 
 </html>
