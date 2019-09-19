@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./scss/index.css">
+    <link rel="stylesheet" href="./scss/index2.css">
+    <script src="./js/goShop.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <span class="header-left">微信</span>
+            <div class="header-right">
+                <div class="search"></div>
+                <div class="addMore"></div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main-item">
+                <div class="logoC">
+                    <img src="" alt="">
+                </div>
+                <div class="msgC">
+                    <h4 class="col">中国</h4>
+                    <p>话费账单</p>
+                </div>
+                <div class="timeC">
+                    <span>15:33</span>
+                </div>
+            </div>
+            <div class="main-item">
+                <div class="logoC">
+                    <img src="" alt="">
+                </div>
+                <div class="msgC">
+                    <h4>中国</h4>
+                    <p>话费账单</p>
+                </div>
+                <div class="timeC">
+                    <span>15:33</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-item">
+                <i data-num="56"></i><span>微信</span>
+            </div>
+            <div class="footer-item">
+                <i></i><span>通讯录</span></div>
+            <div class="footer-item">
+                <i></i><span>发现</span></div>
+            <div class="footer-item my">
+                <i></i><span>我</span></div>
+        </div>
+    </div>
+
+</body>
+<script>
+    var data = [{
+        img: './img/yidong.gif',
+        name: '中国移动10086',
+        msg: '月度话费账单提醒',
+        time: '15:45',
+        num: 4,
+        ding: true
+    }, {
+        img: './img/dingyuehao.png',
+        name: '订阅号消息',
+        msg: '[41条] 新华社:我们居然净利了140年来最热的...',
+        time: '15:33',
+        num: 0,
+        ding: false
+    }, {
+        img: '',
+        name: '姐',
+        msg: '你一会儿给她回个电话',
+        time: '14:42',
+        num: 2,
+        ding: false
+    }, {
+        img: './img/tengxunxinwen.png',
+        name: '腾讯新闻',
+        msg: '习近平两封贺信背后的绿色故事',
+        time: '14:41',
+        num: 7,
+        ding: false
+    }, {
+        img: '',
+        name: '202宿舍',
+        msg: '@:[语音]',
+        time: '12:06',
+        num: 0,
+        ding: false
+    }, {
+        img: './img/zhifulogo.png',
+        name: '微信支付',
+        msg: '微信支付凭证',
+        time: '12:06',
+        num: 6,
+        ding: false
+    }, {
+        img: './img/weixinyundong.png',
+        name: '微信运动',
+        msg: '[应用消息]',
+        time: '昨天',
+        num: 1,
+        ding: false
+    }, {
+        img: '',
+        name: '比心App',
+        msg: '还在云吸猫?来看看时下最火的线上宠儿!',
+        time: '昨天',
+        num: 1,
+        ding: false
+    }, {
+        img: '',
+        name: '李哥',
+        msg: '啥啊?你在哪儿',
+        time: '昨天',
+        num: 0,
+        ding: false
+    }, {
+        img: '',
+        name: '泽轩',
+        msg: '不知道',
+        time: '昨天',
+        num: 0,
+        ding: false
+    }, {
+        img: '',
+        name: '廖',
+        msg: '傻叉',
+        time: '昨天',
+        num: 0,
+        ding: false
+    }, {
+        img: '',
+        name: '申申',
+        msg: '一会儿吧',
+        time: '昨天',
+        num: 0,
+        ding: false
+    }, {
+        img: '',
+        name: '王者-队友',
+        msg: '来来!!!',
+        time: '昨天',
+        num: 0,
+        ding: false
+    }]
+</script>
+<script src="./js/main.js"></script>
+<script>
+    console.log(Key)
+    new Main({
+        data: data,
+        myBtn: document.querySelector('.my'),
+        key: Key,
+    })
+</script>
+
+</html>
