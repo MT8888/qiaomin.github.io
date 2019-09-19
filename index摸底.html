@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //     数组操作
+        var arr = [1, 5, 8, 4, 45, 4, 7, 8, 3]
+        var arr1 = []
+        // 	1、将数组里的偶数添加到arr1里
+        arr.forEach(function (item) {
+            if (item % 2 === 0) {
+                arr1.push(item)
+            }
+        })
+        console.log(arr1)
+        // 字符串拼接
+        var str = "shang hai ba wei"
+        // 	1、将字符串里空格后面的字符串提取出来进行拼接在输出到控制台（可以利用indexOf方法）
+        str = str.split(" ").join("")
+        console.log(str)
+        // 日期对象
+        // 	获取2018年5月最后一天是几号
+        var time = new Date(2018, 5, 0).getDate()
+        console.log(time)
+        // 函数
+        // 	封装一个函数
+        // 		函数名：getRandomArr
+        // 		参数1：num
+        // 		参数2：start
+        // 		参数3：end
+        // 		返回值：返回数组，num个随机数组成的数组，随机数的范围是start到end
+        function getRandomArr(num, start, end) {
+            var arr = []
+            for (var i = 0; i < num; i++) {
+                arr.push(Math.floor(Math.random() * (end - start) + start))
+            }
+            return arr
+        }
+        console.log(getRandomArr(20, 5, 10))
+        // 循环
+        var arr = [5, 9, 8, 6, 2, 3, 6, 8, 87, 4, 5, 8, 5, 4, 78]
+        // 	1、获取数组元素的和
+        // 	2、获取数组里从第五个元素开始到倒数第二的元素的和
+        var sum = 0
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i]
+        }
+        console.log(sum)
+
+        //*******************************************************************
+        var sum = 0
+        for (var i = 4; i < arr.length - 1; i++) {
+            sum += arr[i]
+        }
+        console.log(sum)
+    </script>
+</body>
+
+</html>
